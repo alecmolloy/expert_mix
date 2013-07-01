@@ -3,7 +3,7 @@ SC.initialize({
 });
 
 $(document).ready(function() {
-  SC.get('/tracks', { q: 'Purity Ring' }, function(tracks) {
+  SC.get('/tracks', { q: prompt("Search Soundcloud:") }, function(tracks) {
     $(tracks).each(function(index, track) {
       $('#results').append($('<li></li>').html(track.title + ' - ' + track.genre));
     });
